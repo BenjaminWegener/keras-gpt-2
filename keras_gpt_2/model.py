@@ -2,12 +2,17 @@ from .backend import keras
 from keras_embed_sim import EmbeddingRet, EmbeddingSim
 from keras_pos_embd import PositionEmbedding
 from keras_layer_normalization import LayerNormalization
-from keras_transformer import gelu, attention_builder, feed_forward_builder
+from keras_transformer import attention_builder, feed_forward_builder
 from keras_transformer import get_custom_objects as get_transformer_custom_objects
 
 
 __all__ = ['get_model', 'get_custom_objects']
 
+def gelu(x):
+    """An approximation of gelu.
+    See: https://arxiv.org/pdf/1606.08415.pdf
+    """
+    return 0.5 * x * (1.0 + K.tanh(0.7978845608028654 * (x + 0.044715 * x * x * x))) #save some ops -> math.sqrt(2.0 / math.pi) = 0.7978845608028654
 
 def _wrap_layer(name, input_layer, build_func, trainable=True):
     """Wrap layers with normalization and residual.
