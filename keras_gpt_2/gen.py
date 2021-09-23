@@ -15,6 +15,7 @@ def generate(model,
     :param texts: A list of texts.
     :param length: The length of following texts to be generated.
     :param top_k: Choose the next token from top K.
+    :param top_p: Choose only from top K in top P probability.
     :param temperature: Randomness in boltzmann distribution.
     :return: A list of generated texts.
     """
