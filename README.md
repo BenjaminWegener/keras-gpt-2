@@ -13,10 +13,10 @@
 
 Load pretrained weights and predict with [GPT-2](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf).
 
-## Install
+## Install the newst vgersion W/ TRAINING AND NUCLEUS SAMPLING:
 
 ```bash
-pip install keras-gpt-2
+pip install git+https://github.com/BenjaminWegener/keras-gpt-2 --upgrade
 ```
 
 ## Demo
